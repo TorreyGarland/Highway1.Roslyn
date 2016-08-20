@@ -1,7 +1,7 @@
 ﻿Public Class DependencyObjectGenerator
 
-    Public Sub GenerateDependencyObjects(writer As System.IO.TextWriter)
-        Contracts.Contract.Requires(Of ArgumentNullException)(Not IsNothing(writer), NameOf(writer))
+    Public Sub GenerateDependencyObjects(writer As IO.TextWriter)
+        Contract.Requires(Of ArgumentNullException)(Not IsNothing(writer), NameOf(writer))
         Dim dependencyObjects = GetDependencyObjects()
         If (Not String.IsNullOrWhiteSpace(dependencyObjects)) Then
             writer.WriteLine(dependencyObjects)
